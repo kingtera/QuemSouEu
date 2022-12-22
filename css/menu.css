@@ -1,0 +1,236 @@
+@import url(//fonts.googleapis.com/css?family=Roboto);
+@import url(//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
+
+:root {
+  --color-yellow: #FDC73D;
+  --color-black: #1E1E1E;
+  --color-white: #FFFFFF;
+  --color-darker-grey: #DEDEDE;
+  --color-transparent: rgba(0, 0, 0, 0);
+  --transition-speed: 250ms;
+  --transition-ease: ease-out;
+  --box-shadow-spread: 40px;
+  --box-shadow-rgba-15: rgba(0, 0, 0, 0.15);
+  --menu-width: 300px;
+  --menu-height: 100vh;
+}
+
+.intro {
+  text-align: center;
+}
+
+/*
+menu/navigation
+*/
+
+.menu {
+  position: absolute;
+  z-index: 1;
+  left: 40px;
+  top: 40px;
+}
+
+.menu .menu-button .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--color-black);
+  border-radius: 31.5px;
+  background-color: var(--color-white);
+  padding: 15px 46px;
+  transition: background-color var(--transition-speed) var(--transition-ease);
+  cursor: pointer;
+}
+
+.menu .menu-button .label:hover {
+  background-color: var(--color-yellow);
+}
+
+.menu .menu-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.menu .menu-button input:checked ~ .menu-main {
+  left: 0px;
+}
+
+.menu .menu-button .menu-main {
+  position: fixed;
+  width: var(--menu-width);
+  height: var(--menu-height);
+  left: calc((var(--menu-width) + var(--box-shadow-spread)) * -1);
+  top: 0px;
+  transition: left var(--transition-speed) var(--transition-ease);
+  background-color: var(--color-white);
+  padding: 50px 30px;
+  box-shadow: 0 0 var(--box-shadow-spread) 0 var(--box-shadow-rgba-15);
+  border-right: 6px solid var(--color-yellow);
+}
+
+.menu .menu-button .menu-main .close {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  top: 18px;
+  right: 28px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform var(--transition-speed) var(--transition-ease);
+  transform-origin: center;
+  transform-origin: 48% 42%;
+  font-size: 1rem;
+}
+
+.menu .menu-button .menu-main .close:hover {
+  transform: rotate(90deg);
+}
+
+.menu .menu-button .menu-main .headline {
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu .menu-button .menu-main .headline span {
+  font-size: 1.75rem;
+}
+
+.menu .menu-button .menu-main ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-right: 20px;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link:visited {
+  color: var(--color-black);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link:active {
+  color: var(--color-black);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link:focus {
+  color: var(--color-black);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link span {
+  background-image: linear-gradient(var(--color-yellow) 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size var(--transition-speed) var(--transition-ease), background-position 0s var(--transition-speed) var(--transition-ease);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link:hover > span {
+  background-position: 100% 100%;
+  background-size: 100% 2px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button-link::after {
+  position: absolute;
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.375rem;
+  content: '\eac9';
+  top: -4px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .label {
+  letter-spacing: initial;
+  line-height: initial;
+  text-transform: initial;
+  border-radius: initial;
+  background-color: initial;
+  display: block;
+  position: relative;
+  padding: 0px 20px 0px 0px;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .label span {
+  background-image: linear-gradient(var(--color-yellow) 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size var(--transition-speed) var(--transition-ease), background-position 0s var(--transition-speed) var(--transition-ease);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .label:hover > span {
+  background-position: 100% 100%;
+  background-size: 100% 2px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .label::after {
+  position: absolute;
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.375rem;
+  content: '\f8ee';
+  top: -4px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button input:checked ~ .menu-sub {
+  left: 0px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .menu-sub {
+  position: absolute;
+  z-index: 2;
+  width: calc(var(--menu-width) - 6px);
+  height: calc(var(--menu-height) - 50px);
+  left: calc((var(--menu-width) - 6px) * -1);
+  top: 50px;
+  transition: left var(--transition-speed) var(--transition-ease);
+  background-color: var(--color-white);
+  padding: 0px 30px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .menu-sub .back-button {
+  cursor: pointer;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .menu-sub .back-button span {
+  font-size: 1.75rem;
+  color: var(--color-black);
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+.menu .menu-button .menu-main ul li .submenu-button .menu-sub .back-button:hover > span {
+  color: var(--color-yellow);
+}

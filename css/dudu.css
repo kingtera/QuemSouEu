@@ -1,0 +1,38 @@
+/* Perguntar qual a diferença entre a public e a resources */
+/* Porque somente alterações na public alteram o conteúdo, pra que a resources? */
+.contextGroup {
+    display: flex;
+    justify-content: center;
+}
+
+.contextGroup button {
+    position: absolute;
+    left: 110px;
+    bottom: 0;
+    z-index: 2;
+
+    width: 110px;
+}
+
+.categoriesDisplay {
+    display: flex;
+    justify-content: center;
+}
+
+.categoriesButtons {
+    position: absolute;
+    z-index: 2;
+
+    margin-top: 8px;
+    width: 542px;
+
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.returnButton {
+    margin-top: 16px;
+    width: 100px;
+}
