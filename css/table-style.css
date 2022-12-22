@@ -1,0 +1,25 @@
+table {
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px black;
+}
+
+.tableContent {
+    position: absolute;
+    z-index: 1;
+    inset: 50px;
+
+    width: 80%;
+    margin-top: 100px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.tableMain {
+    width: 70%;
+}
+
+.tableDescription {
+    width: 35%;
+}
